@@ -19,6 +19,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public Page<Customer> findAllByFirstNameContaining(String firstname, Pageable pageable) {
+        return customerRepository.findAllByFirstNameContaining(firstname, pageable);
+    }
+
+    @Override
     public Customer findById(Long id) {
         return customerRepository.findOne(id);
     }
